@@ -15,9 +15,7 @@ import com.example.demo.service.UserService;
 /**
  * ユーザー情報 Controller
  */
-
 @Controller
-
 public class UserController {
   /**
    * ユーザー情報 Service
@@ -30,8 +28,7 @@ public class UserController {
    * @param model Model
    * @return ユーザー情報一覧画面
    */
-  
-  @GetMapping(value ="/user/search")
+  @GetMapping(value = "/user/search")
   public String displaySearch(Model model) {
     model.addAttribute("userSearchRequest", new UserSearchRequest());
     return "user/search";
@@ -49,4 +46,4 @@ public class UserController {
     model.addAttribute("userinfo", user);
     return "user/search";
   }
-}  
+}
