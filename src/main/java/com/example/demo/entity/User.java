@@ -44,4 +44,4 @@ public class User {
 	 * 削除日時
 	 */
 	private Date deleteDate;
-}a
+}
