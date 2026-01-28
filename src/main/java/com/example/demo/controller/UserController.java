@@ -84,20 +84,21 @@ public class UserController {
 	   * ユーザー新規登録
 	   * @param userRequest リクエストデータ
 	   * @param model Model
-	   * @return ユーザー情報一覧画面
+	   *@return ユーザー情報一覧画面 
 	   */
 	@RequestMapping(value = "/user/create", method = RequestMethod.POST)
-	public String create(@Validated @ModelAttribute UserRequest userRequest, BindingResult result, Model model) {
 
+	public String create(@Validated @ModelAttribute UserRequest userRequest, BindingResult result, Model model) {
 		if (result.hasErrors()) {
-			// 入力チェックエラーの場合
 			List<String> errorList = new ArrayList<String>();
 			for (ObjectError error : result.getAllErrors()) {
 				errorList.add(error.getDefaultMessage());
 			}
+
 			model.addAttribute("validationError", errorList);
 			return "user/add";
 		}
+
 		// ユーザー情報の登録
 		userService.create(userRequest);
 		return "redirect:/user/list";
@@ -170,4 +171,5 @@ public class UserController {
 		userService.delete(id);
 		return "redirect:/user/list";
 	}
+
 }
