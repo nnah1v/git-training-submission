@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "house")
+@Table(name = "houses")
 @Data
 public class House {
 	@Id
@@ -24,7 +24,6 @@ public class House {
 	private String name;
 
 	@Column(name = "image_name")
-
 	private String imageName;
 
 	@Column(name = "description")
@@ -38,6 +37,9 @@ public class House {
 
 	@Column(name = "postal_code")
 	private String postalCode;
+
+	@Column(name = "address")
+	private String address;
 
 	@Column(name = "phone_number")
 	private String phoneNumber;
