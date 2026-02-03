@@ -26,13 +26,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 			throws UsernameNotFoundException {
 		try {
 			User user = userRepository.findByEmail(email);
-			String userReleName = user.getRole().getName();
+			String userRoleName = user.getRole().getName();
 			Collection<GrantedAuthority> authorities = new ArrayList<>();
-			authorities.add(new SimpleGrantedAuthority(userReleName));
+			authorities.add(new SimpleGrantedAuthority(userRoleName));
 			return new UserDetailsImpl(user, authorities);
 		} catch (Exception e) {
 			throw new UsernameNotFoundException("ユーザーが見つかりませんでした。");
 		}
 	}
-
 }

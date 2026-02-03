@@ -2,9 +2,10 @@ package com.example.moattravel.security;
 
 import java.util.Collection;
 
-import org.apache.catalina.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import com.example.moattravel.entity.User;
 
 public class UserDetailsImpl implements UserDetails {
 	private final User user;

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
-	<th:block th:replace="~{fragment :: meta}"></th:block> 
-	<th:block th:replace="~{fragment :: styles}"></th:block> 
+	<th:block th:replace="~{fragment :: meta}"></th:block>
+	<th:block th:replace="~{fragment :: styles}"></th:block>
 	<title>ログイン</title>
 </head>
 
@@ -28,7 +28,7 @@
 							</div>
 							<div class="form-group mb-3">
 								<input type="password" class="form-control" name="password"
-									autocomplete="current-password" placeholder="パスワード"> <!-- 変更 -->
+									autocomplete="current-password" placeholder="パスワード">
 							</div>
 							<div class="form-group d-flex justify-content-center my-4">
 								<button type="submit"
@@ -36,7 +36,8 @@
 							</div>
 						</form>
 
-						<div class="text-center"><a href="#">会員登録</a></div>
+						<div class="text-center"><a href="#"><a th:href="@{/singnup}">会員登録</a>
+						</div>
 					</div>
 				</div>
 			</div>
