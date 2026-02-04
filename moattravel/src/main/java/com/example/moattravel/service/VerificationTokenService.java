@@ -18,6 +18,8 @@ public class VerificationTokenService {
 	@Transactional
 	public void create(User user, String token) {
 		VerificationToken verificationToken = new VerificationToken();
+		verificationToken.setUser(user);  
+		verificationToken.setToken(token); 
 		verificationTokenRepository.save(verificationToken);
 	}
 
